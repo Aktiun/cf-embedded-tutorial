@@ -1,0 +1,230 @@
+body {
+    display: flex;
+    margin: 0;
+    height: 100%;
+    background: #f7f7f7;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.sidebar {
+    border-radius: 0px 40px 0px 0px;
+    width: 15%;
+    background: #2b428b;
+    justify-items: center;
+    flex-direction: column;
+    z-index: 5;
+}
+
+.logo {
+    margin-top: 16px;
+    color: white;
+    font-size: 1.2em;
+    display: flex;
+    z-index: 20;
+    flex-direction: column;
+    text-align: center;
+    font-weight: bold;
+}
+
+.title {
+    font-size: 0.8em;
+    padding-bottom: 3px;
+    border-bottom: 0.5px solid white;
+}
+
+.subtitle {
+    margin-top: 4px;
+    font-size: 0.7em;
+}
+
+.imgcontainer {
+    width: 90px;
+    height: 90px;
+    z-index: 0;
+    border: 2px solid white;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+    background: url('./img/lfb-2.jpeg');
+    border-radius: 50%;
+    opacity: 0.8;
+    background-size: 100px 100px;
+    background-position-x: 18px;
+    background-position-y: 90px;
+}
+
+.menu {
+    font-size: 13px;
+    color: white;
+    margin-top: 70px;
+}
+
+.menu-item {
+    margin-top: 20px;
+    margin-left: 7px;
+    background: #475ca1;
+    padding: 10px 7px;
+    border-radius: 10px 0px 0px 10px;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    background: #f7f7f7;
+    color: #323232;
+}
+
+.container {
+    padding: 10px;
+    height: 1000px;
+}
+
+#slicer-container, #rdt-container {
+    position: fixed;
+    width: 300px;
+    height: 90%;
+    top: 10;
+    z-index: 3;
+    border-radius: 0px 20px 20px 0px;
+    background: #475ca1;
+    -webkit-box-shadow: 10px 10px 17px -7px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 10px 10px 17px -7px rgba(0, 0, 0, 0.4);
+    box-shadow: 10px 10px 17px -7px rgba(0, 0, 0, 0.4);
+    padding: 18px;
+    transition: left 0.4s;
+}
+
+#slicer-container {
+  left: -280;
+}
+
+#slicer-container.open {
+  left: 14%;
+}
+
+#rdt-container {
+  width: 80%;
+  left: -1800;
+}
+
+#rdt-container.open {
+  left: 14%;
+}
+
+.main {
+    width: 85%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 12px;
+    width: 100%;
+}
+
+.search {
+    border: none !important;
+    border-radius: 30px;
+    background: #ddd;
+    height: 30px;
+    padding-left: 10px;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+}
+
+pre::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+}
+pre::-webkit-scrollbar-track-piece {
+    background: #e9ecef;
+    border-radius: 5px;
+}
+pre::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+.widget {
+    border-radius: 17px;
+    padding: 8px;
+    background: #fff;
+    -webkit-box-shadow: 10px 10px 17px -7px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 10px 10px 17px -7px rgba(0, 0, 0, 0.1);
+    box-shadow: 10px 10px 17px -7px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+
+.widget-title {
+    margin-top: -3px;
+    font-size: 10px;
+    padding: 5px;
+    padding-left: 20px;
+    color: #696969;
+    text-transform: uppercase;
+    background: #e4e3e3;
+    border-radius: 7px;
+    margin-bottom: 10;
+}
+
+.size-1 {
+    width: 100%;
+}
+.size-2 {
+    width: 47%;
+}
+.size-3 {
+    width: 57%;
+}
+.size-4 {
+    width: 37%;
+}
+
+
+/*============ VISUALIZATIONS ============*/
+#trend {
+    width: 100%;
+    height: 190px;
+}
+#bars-vertical {
+    width: 100%;
+    height: 190px;
+}
+#box-plot {
+    width: 98%;
+    height: 650px;
+}
+#bars-horizontal {
+    width: 98%;
+    height: 650px;
+}
+#imanager {
+    width: 100%;
+}
+#vector-map {
+    width: 100%;
+    height: 190px;
+}
+
+#time-slider {
+    width: 100%;
+    height: 100px;
+}
+
+@media (max-width: 700px) {
+    .imgcontainer {
+        width: 50px;
+        height: 50px;
+        background-position-x: -40px;
+        background-position-y: -30px;
+    }
+}

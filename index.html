@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>London Fire Brigrade</title>
+        <script src="./libs/cftoolkit.min.js"></script>
+        <script src="./libs/cft-elasticsearch-provider.min.js"></script>
+        <script src="./libs/cft-standard-charts.min.js"></script>
+        <script src="./libs/cft-tables-charts.min.js"></script>
+        <script src="./libs/cft-interactive-charts.min.js"></script>
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+
+    <body>
+        <nav class="sidebar">
+            <div class="imgcontainer"></div>
+            <div class="logo">
+              <span class="title">London Fire</span>
+              <span class="subtitle">Brigade</span>
+            </div>
+            <div class="menu">
+              <div id="categories-btn" class="menu-item">Property categories</div>
+              <div id="rdt-btn" class="menu-item">Raw data</div>
+            </div>
+        </nav>
+        <div id="slicer-container">
+          <div id="slicer"></div>
+        </div>
+        <div id="rdt-container">
+          <div id="rdt"></div>
+        </div>
+        <div class="main">
+            <div class="container">
+                <div class="row">
+                    <div id="imanager"></div>
+                </div>
+                <div class="row">
+                    <div class="widget size-1">
+                        <div id="time-slider"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="widget size-3">
+                        <div class="widget-title">Calls by hour of the day</div>
+                        <div id="bars-vertical"></div>
+                    </div>
+                    <div class="widget size-4">
+                        <div class="widget-title">Borough map with numbers of calls</div>
+                        <div id="vector-map"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="widget size-1">
+                        <div class="widget-title">Calls trend</div>
+                        <div id="trend"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="widget size-2">
+                        <div class="widget-title">First arrival time distribution (secs)</div>
+                        <div id="box-plot"></div>
+                    </div>
+                    <div class="widget size-2" id="bars-h">
+                        <div class="widget-title">Number of calls by borough</div>
+                        <div id="bars-horizontal"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="./index.js"></script>
+
+    </body>
+</html>
