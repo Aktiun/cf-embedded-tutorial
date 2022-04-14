@@ -82,30 +82,48 @@ function interactionManager() {
 }
 
 function trend() {
-/* Configuration code for this widget */
-let provider = cf.provider("My data engine");
-let source = provider.source('london_fire_brigade_calls_test');
-// Define metrics
-let metric0 = cf.Metric("count");
-// Define attributes to group by
-let group1 = cf.Attribute("borough_name")
-	.limit(10)
-	.sort("desc", cf.Metric());
-// Add metrics and groups to data source
-let myData = source.groupby(group1)
-	.metrics(metric0);
-// --- Define chart options and static filters ---
-// Define Color Palette
-let color = cf.Color()
-	.palette(["#332288", "#6699cc", "#88ccee",
-		"#44aa99", "#117733", "#999933",
-		"#ddcc77", "#661100", "#cc6677",
-		"#aa4466", "#882255", "#aa4499"]);
-let myChart = myData.graph("Tree Map")
-	.set("color", color)
-    .element("trend")
-	.execute();
+    /* Configuration code for this widget */
+    let provider = cf.provider('My data engine')
+    let source = provider.source('london_fire_brigade_calls_test')
+    // Define metrics
+    let metric0 = cf.Metric('count')
+    // Define attributes to group by
+    let group1 = cf
+        .Attribute('date_of_call')
+        .limit(1000)
+        .func('DAY')
+        .sort('asc', 'date_of_call')
 
+    // Add metrics and groups to data source
+    let myData = source.groupby(group1).metrics(metric0)
+    // --- Define chart options and static filters ---
+    // Define Grid
+    let grid = cf.Grid().top(10).right(25).bottom(35).left(45)
+    // Define Color Palette
+    let color = cf
+        .Color()
+        .palette([
+            '#0095b7',
+            '#a0b774',
+            '#f4c658',
+            '#fe8b3e',
+            '#cf2f23',
+            '#756c56',
+            '#007896',
+            '#47a694',
+            '#f9a94b',
+            '#ff6b30',
+            '#e94d29',
+            '#005b76'
+        ])
+    let myChart = myData
+        .graph('Trend')
+        .set('grid', grid)
+        .set('color', color)
+        .set('xAxis', { labelGap: 30 })
+        .set('dataZoom', false)
+        .element('trend')
+        .execute()
 }
 
 function verticalbars() {
